@@ -1,4 +1,4 @@
-# ServerStatus
+#server_status
 ============
 
 ServerStatus is based off [BlueVM's](http://uptime.bluevm.com/) Uptime Checker script, [original download and information](http://www.lowendtalk.com/discussion/comment/169690#Comment_169690).
