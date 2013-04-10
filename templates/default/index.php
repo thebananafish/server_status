@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ServerStatus</title>
+		<title>server_status</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="<?php echo $template; ?>css/bootstrap-combined.min.css" rel="stylesheet">
 		<link href="<?php echo $template; ?>css/custom.css" rel="stylesheet">
