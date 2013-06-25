@@ -9,8 +9,7 @@ You can currently see Load, RAM (free), HDD (free) statistics, and if it is onli
 
 # Screenshot
 ============
-![Screenshot](http://i.imgur.com/wMNzhw0.png)
-![Mobile Screenshot](http://i.imgur.com/na8iVZH.png)
+![Screenshot](http://img.installgentoo.com/di/3LFL/ss.png)
 
 # Installation
 ============
@@ -37,3 +36,7 @@ You can currently see Load, RAM (free), HDD (free) statistics, and if it is onli
 * PHP5 + PHP5_CURL
 * Web Server (lighttpd, apache2, nginx, etc.)
 * mySQL server unless you choose to use a remote mySQL server.
+
+# Note
+======
+This does not properly report status of BSD based hosts.
