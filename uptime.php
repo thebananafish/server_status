@@ -4,7 +4,7 @@ function sec2human($time) {
 	$mins = floor($time/60)%60;
 	$hours = floor($time/60/60)%24;
 	$days = floor($time/60/60/24);
-	return $days > 0 ? $days . ' day'.($days > 1 ? 's' : '') : $hours.':'.$mins.':'.$seconds;
+	return $days > 0 ? "$days day".($days > 1 ? 's' : '') : "$hours:$mins:$seconds";
 }
 
 $array = array();
@@ -41,7 +41,7 @@ if ($memory <= 50) { $memlevel = "warning"; }
 if ($memory <= 35) { $memlevel = "danger"; }
 
 $array['memory'] = "<div class=\"progress progress-striped active\">
-<div class=\"bar bar-$memlevel\" style=\"width: $memory%;\">$memory.%</div>
+<div class=\"bar bar-$memlevel\" style=\"width: $memory%;\">$memory%</div>
 </div>";
 
 $hddtotal = disk_total_space("/");
