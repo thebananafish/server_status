@@ -34,29 +34,29 @@ fclose($fh);
 
 $memmath = $memcache + $memfree;
 $memmath2 = $memmath / $memtotal * 100;
-$memory = round($memmath2) . '%';
+$memory = round($memmath2);
 
-if ($memory >= "51%") { $memlevel = "success"; }
-elseif ($memory <= "50%") { $memlevel = "warning"; }
-elseif ($memory <= "35%") { $memlevel = "danger"; }
+$memlevel = "success";
+if ($memory <= 50) { $memlevel = "warning"; }
+if ($memory <= 35) { $memlevel = "danger"; }
 
-$array['memory'] = '<div class="progress progress-striped active">
-<div class="bar bar-'.$memlevel.'" style="width: '.$memory.';">'.$memory.'</div>
-</div>';
+$array['memory'] = "<div class=\"progress progress-striped active\">
+<div class=\"bar bar-$memlevel\" style=\"width: .$memory.%;\">.$memory.%</div>
+</div>";
 
 $hddtotal = disk_total_space("/");
 $hddfree = disk_free_space("/");
 $hddmath = $hddfree / $hddtotal * 100;
-$hdd = round($hddmath) . '%';
+$hdd = round($hddmath);
 
-if ($hdd >= "51%") { $hddlevel = "success"; }
-elseif ($hdd <= "50%") { $hddlevel = "warning"; }
-elseif ($hdd <= "35%") { $hddlevel = "danger"; }
+$hddlevel = "success";
+if ($hdd <= 50) { $hddlevel = "warning"; }
+if ($hdd <= 35) { $hddlevel = "danger"; }
 
 
-$array['hdd'] = '<div class="progress progress-striped active">
-<div class="bar bar-'.$hddlevel.'" style="width: '.$hdd.';">'.$hdd.'</div>
-</div>';
+$array['hdd'] = "<div class=\"progress progress-striped active\">
+<div class=\"bar bar-$hddlevel\" style=\"width: $hdd%;\">$hdd%</div>
+</div>";
 
 $load = sys_getloadavg();
 $array['load'] = $load[0];
