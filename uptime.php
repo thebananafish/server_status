@@ -41,7 +41,7 @@ if ($memory <= 50) { $memlevel = "warning"; }
 if ($memory <= 35) { $memlevel = "danger"; }
 
 $array['memory'] = "<div class=\"progress progress-striped active\">
-<div class=\"bar bar-$memlevel\" style=\"width: .$memory.%;\">.$memory.%</div>
+<div class=\"bar bar-$memlevel\" style=\"width: $memory.%;\">.$memory.%</div>
 </div>";
 
 $hddtotal = disk_total_space("/");
