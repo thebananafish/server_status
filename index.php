@@ -1,9 +1,11 @@
 <?php
 include('./includes/config.php');
+
 $sTable = '';
+$sJavascript = '';
 
 $query = $mysqli->query("SELECT * FROM servers ORDER BY id") or die($mysqli->error);
-	$sJavascript = '<script type="text/javascript">
+	$sJavascript .= '<script type="text/javascript">
 		function uptime() {
 			$(function() {';
 while($result = $query->fetch_array()){
