@@ -1,11 +1,12 @@
 <?php
 include('./includes/config.php');
+$sTable = '';
 
-$query = mysql_query("SELECT * FROM servers ORDER BY id") or die(mysql_error());
-	$sJavascript .= '<script type="text/javascript">
+$query = $mysqli->query("SELECT * FROM servers ORDER BY id") or die(mysqli_error($mysqli));
+	$sJavascript = '<script type="text/javascript">
 		function uptime() {
 			$(function() {';
-while($result = mysql_fetch_array($query)){
+while($result = $query->fetch_array()){
 	$sJavascript .= '$.getJSON("pull/index.php?url='.$result["id"].'",function(result){
 	$("#online'.$result["id"].'").html(result.online);
 	$("#uptime'.$result["id"].'").html(result.uptime);
@@ -44,5 +45,5 @@ while($result = mysql_fetch_array($query)){
 	uptime();
 	setInterval(uptime, '.$sSetting['refresh'].');
 	</script>';
-include('./templates/default/index.php');
+	include('./templates/default/index.php');
 ?>
